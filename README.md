@@ -5,14 +5,17 @@ single image dehazing on dark channel prior.
 
 more information you can see at
 
-+ "Single Image Haze Removal Using Dark Channel Prior"[1].
-+ "Guided Image Filtering"[3].
++ ["Single Image Haze Removal Using Dark Channel Prior"] [1].
+
++ ["Guided image filtering"] [3].
 
 
 TODO
 ------
 
-+ 还在写 soft matting or guied image filter paper还没看懂
++ soft matting
+
++ other?
 
 
 
