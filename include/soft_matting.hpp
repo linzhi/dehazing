@@ -20,10 +20,10 @@ int laplacian_matrix(const Mat &src, int k_size)
     }
     
     int k_center = (k_size - 1) / 2;
-	
-	for (int i = k_center; i < src.rows - k_center; i++) {
+    
+    for (int i = k_center; i < src.rows - k_center; i++) {
         for (int j = k_center; j < src.cols - k_center; j++) {
-			Mat local_win = src.colRange(j-k_center, j+k_center+1).rowRange(i-k_center, i+k_center+1);
+            Mat local_win = src.colRange(j-k_center, j+k_center+1).rowRange(i-k_center, i+k_center+1);
 
             Scalar mu = mean(local_win);
 
