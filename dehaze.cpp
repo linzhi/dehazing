@@ -1,6 +1,5 @@
 #include "opencv2/opencv.hpp"
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 using namespace cv;
@@ -41,10 +40,11 @@ int main(int argc, char *argv[])
     // get transmission diagram
     estimate_transmission(dark_channel, transmission, A);
 
-    // get haze free image
-    dehazing(haze_img, transmission, dehaze_img, A);
+    // refine tansmission image
+    solve_laplacian_matrix(haze_img, transmission, op_transmission, 3);
 
-    //laplacian_matrix(haze_img, 3);
+    // get haze free image
+    dehazing(haze_img, op_transmission, dehaze_img, A);
 
     namedWindow("haze image", CV_WINDOW_AUTOSIZE);
     imshow("haze image", haze_img);
@@ -55,11 +55,11 @@ int main(int argc, char *argv[])
 
     namedWindow("transmission image", CV_WINDOW_AUTOSIZE);
     imshow("transmission image", transmission);
-    imwrite("result/tansmission.png", transmission);
+    imwrite("result/t.png", transmission);
 
     namedWindow("refine transmission image", CV_WINDOW_AUTOSIZE);
     imshow("refine transmission image", op_transmission);
-    imwrite("result/refine_transmission.png", op_transmission);
+    imwrite("result/refine_t.png", op_transmission);
 
     namedWindow("haze free image", CV_WINDOW_AUTOSIZE);
     imshow("haze free image", dehaze_img);

@@ -5,7 +5,7 @@
  * estimating the atmospheric light of each channel
  */
 
-Scalar estimate_AL(Mat &img_b, Mat &img_g, Mat &img_r)
+static Scalar estimate_AL(Mat &img_b, Mat &img_g, Mat &img_r)
 {
     double min_pixel = 0;
     double AL_B = 0, AL_G = 0, AL_R = 0;

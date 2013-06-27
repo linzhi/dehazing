@@ -5,7 +5,7 @@
  * estimating the transmission
  */
 
-int estimate_transmission(const Mat &src, Mat &dst, Scalar A)
+static int estimate_transmission(const Mat &src, Mat &dst, Scalar A)
 {
     // parameter for keep part of the haze to seem natural
     const double w = 0.95;

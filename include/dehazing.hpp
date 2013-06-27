@@ -5,7 +5,7 @@
  * dehazing
  */
  
-int dehazing(const Mat &haze_img, const Mat &transmission, Mat &dehaze_img, Scalar A)
+static int dehazing(const Mat &haze_img, const Mat &transmission, Mat &dehaze_img, Scalar A)
 {
     Scalar t_pixel;
     Vec3b haze_pixel;

@@ -7,7 +7,7 @@
  * get dark channel of hazy image
  */
  
-int get_dark_channel(const Mat &src, Mat &dark_channel)
+static int get_dark_channel(const Mat &src, Mat &dark_channel)
 {
     Mat dark_bgr = Mat::zeros(src.size(), CV_8UC1);
     dark_channel = Scalar::all(255);
